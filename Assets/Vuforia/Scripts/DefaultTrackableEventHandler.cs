@@ -92,7 +92,10 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
         woodwardFloor.transform.position = mapPosition;
         woodwardFloor.transform.rotation = mapRotation;
-       
+
+        VuforiaBehaviour.Instance.enabled = false;
+
+
     }
 
 
