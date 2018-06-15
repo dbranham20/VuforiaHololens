@@ -681,7 +681,7 @@ Camera:
     height: 1
   near clip plane: 0.05
   far clip plane: 2000
-  field of view: 60
+  field of view: 114
   orthographic: 0
   orthographic size: 5
   m_Depth: 1
@@ -706,7 +706,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 637533862}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 822, y: 1.3, z: 72}
+  m_LocalPosition: {x: 200, y: 1.3, z: 72}
   m_LocalScale: {x: 0.2286, y: 0.2286, z: 0.2286}
   m_Children:
   - {fileID: 325984540}
@@ -759,7 +759,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.4, y: -33.2}
+  m_AnchoredPosition: {x: 11.4, y: 20}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &638673799
@@ -1622,6 +1622,7 @@ GameObject:
   - component: {fileID: 1777511443}
   - component: {fileID: 1777511446}
   - component: {fileID: 1777511445}
+  - component: {fileID: 1777511447}
   - component: {fileID: 1777511444}
   m_Layer: 5
   m_Name: Canvas
@@ -1708,7 +1709,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -27, y: -17}
+  m_AnchoredPosition: {x: 95, y: -30}
   m_SizeDelta: {x: 1207, y: 414}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1777511443
@@ -1731,12 +1732,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1777511438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f474bf1454b53347ab84f38e6d2af9e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c655338633f4544180b3d90a593ac17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Radius: 1
-  Speed: 2
-  ARCamera: {fileID: 637533866}
+  TagalongDistance: 2
+  EnforceDistance: 1
+  PositionUpdateSpeed: 9.8
+  SmoothMotion: 1
+  SmoothingFactor: 0.75
+  MinimumHorizontalOverlap: 0.1
+  TargetHorizontalOverlap: 1
+  MinimumVerticalOverlap: 0.1
+  TargetVerticalOverlap: 1
+  HorizontalRayCount: 3
+  VerticalRayCount: 3
+  MinimumTagalongDistance: 1
+  MaintainFixedSize: 1
+  DepthUpdateSpeed: 4
+  DebugDrawLines: 0
+  DebugPointLight: {fileID: 0}
 --- !u!114 &1777511445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1769,6 +1783,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1777511447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1777511438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8d5b128a1d8204fb76c86f47b75912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pivotAxis: 0
+  targetTransform: {fileID: 0}
 --- !u!1 &1940146380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1949,6 +1976,11 @@ Prefab:
     - target: {fileID: 4000011792100794, guid: a611e772ef8ddf64d8106a9cbb70f31c, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611684728110934, guid: a611e772ef8ddf64d8106a9cbb70f31c,
+        type: 2}
+      propertyPath: MinCursorDistance
+      value: 1.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a611e772ef8ddf64d8106a9cbb70f31c, type: 2}
