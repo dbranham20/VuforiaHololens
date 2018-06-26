@@ -12,8 +12,8 @@ public class ARCameraPos : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Debug.Log.
-        Debug.Log("AR camera POSITION: " + transform.position);
-        Debug.Log("AR camera ROTATION: " + transform.rotation);
+       // Debug.Log("AR camera POSITION: " + transform.position);
+       // Debug.Log("AR camera ROTATION: " + transform.rotation);
 		
 	}
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class buttonScript : MonoBehaviour {
 
+    public NetManager netM;
 
 	// Use this for initialization
 	void Start ()
@@ -18,12 +19,6 @@ public class buttonScript : MonoBehaviour {
 
     public void buttonAction()
     {
-        var imageTargetStatus = GameObject.FindGameObjectWithTag("vuforiaUI").GetComponent<Text>();
-        var connectionStatus = GameObject.FindGameObjectWithTag("connectionUI").GetComponent<Text>();
-       // imageTargetStatus.color = Color.green;
-       // imageTargetStatus.text = "Found";
-        connectionStatus.color = Color.green;
-        connectionStatus.text = "Connected";
     }
 
 }

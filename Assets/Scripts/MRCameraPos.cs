@@ -11,7 +11,7 @@ public class MRCameraPos : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log("MR camera POSITION: " + transform.position);
-        Debug.Log("MR camera ROTATION: " + transform.rotation);
+       // Debug.Log("MR camera POSITION: " + transform.position);
+       // Debug.Log("MR camera ROTATION: " + transform.rotation);
     }
 }
